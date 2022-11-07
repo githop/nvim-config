@@ -7,6 +7,9 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
 nvimtree.setup({
+	git = {
+		ignore = false,
+	},
 	actions = {
 		open_file = {
 			window_picker = {
