@@ -1,23 +1,23 @@
 -- import nvim-cmp plugin safely
 local cmp_status, cmp = pcall(require, "cmp")
 if not cmp_status then
-  print("no cmp_status")
+	print("no cmp_status")
 	return
 end
 
 -- import luasnip plugin safely
 local luasnip_status, luasnip = pcall(require, "luasnip")
 if not luasnip_status then
-  print("no luasnip_status")
+	print("no luasnip_status")
 	return
 end
 
 -- -- import lspkind plugin safely
--- local lspkind_status, lspkind = pcall(require, "lspkind")
--- if not lspkind_status then
---   print("no lspkind_status")
--- 	return
--- end
+local lspkind_status, lspkind = pcall(require, "lspkind")
+if not lspkind_status then
+	print("no lspkind_status")
+	return
+end
 
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
 require("luasnip/loaders/from_vscode").lazy_load()
@@ -41,15 +41,16 @@ cmp.setup({
 	}),
 	-- sources for autocompletion
 	sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
 		{ name = "luasnip" }, -- snippets
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
 	}),
 	-- configure lspkind for vs-code like icons
-	-- formatting = {
-	-- 	format = lspkind.cmp_format({
-	-- 		maxwidth = 50,
-	-- 		ellipsis_char = "...",
-	-- 	}),
-	-- },
+	formatting = {
+		format = lspkind.cmp_format({
+			maxwidth = 50,
+			ellipsis_char = "...",
+		}),
+	},
 })
