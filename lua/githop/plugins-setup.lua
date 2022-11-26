@@ -28,7 +28,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	-- My plugins here
 
-	use("Shatur/neovim-ayu") -- colorscheme
+	use("sainnhe/everforest") -- colorscheme
 	use("tpope/vim-surround")
 	use("vim-scripts/ReplaceWithRegister")
 	use("numToStr/Comment.nvim")
