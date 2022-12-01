@@ -14,7 +14,8 @@ keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width and height" })
 keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close current split window" })
-
+keymap.set("n", "<leader>[", ":bp<CR>", { desc = "Previous buffer" })
+keymap.set("n", "<leader>]", ":bn<CR>", { desc = "Next buffer" })
 -- nvim tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle nvim tree" })
 
