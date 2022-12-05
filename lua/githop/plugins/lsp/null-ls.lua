@@ -1,4 +1,3 @@
-
 -- import null-ls plugin safely
 local setup, null_ls = pcall(require, "null-ls")
 if not setup then
@@ -20,6 +19,7 @@ null_ls.setup({
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
+		formatting.black, -- python formatter
 		diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 			condition = function(utils)

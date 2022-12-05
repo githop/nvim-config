@@ -19,7 +19,7 @@ end
 local keymap = vim.keymap -- for conciseness
 
 local on_attach = function(client, bufnr)
-  -- keybind options
+	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- set keybinds
@@ -56,15 +56,15 @@ for type, icon in pairs(signs) do
 end
 
 lspconfig["html"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 typescript.setup({
-  server = {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+	},
 })
 
 lspconfig["cssls"].setup({
@@ -91,4 +91,9 @@ lspconfig["sumneko_lua"].setup({
 			},
 		},
 	},
+})
+
+lspconfig["pyright"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
